@@ -1,24 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <script src="/assets/js/main.js" defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Creator Brief Template That Gets Results | UGC Agency Blog</title>
-    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="/assets/css/styles.css">
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <link rel="stylesheet" href="/assets/css/styles.css">
 </head>
 <body>
     <!-- Navigation -->
+    
     <nav class="main-nav">
         <div class="nav-container">
-            <a href="/" class="logo">The UGC Agency</a>
+            <a href="/" class="logo" style="display: flex; align-items: center; gap: 0.75rem;">
+                <img src="/assets/images/makeugclogo-01.jpg" alt="MakeUGC Logo" style="height: 50px; width: 50px; border-radius: 50%; object-fit: cover;">
+                <span>MakeUGC</span>
+            </a>
             <ul class="nav-links">
                 <li><a href="/">Home</a></li>
                 <li><a href="/pages/services.html">Services</a></li>
                 <li><a href="/pages/creators.html">Creators</a></li>
                 <li><a href="/pages/blog/blog.html">Blog</a></li>
                 <li><a href="/pages/about.html">About</a></li>
-                <li><a href="resources.html">Resources</a></li>
+                <li><a href="/pages/tools/ugc-strategy-guide.html">Resources</a></li>
                 <li><a href="/pages/contact.html" class="btn btn-primary">Contact</a></li>
             </ul>
             <button class="mobile-nav-toggle">☰</button>
@@ -233,12 +240,12 @@
             <aside class="related-articles">
                 <h3>Related Articles</h3>
                 <div class="related-grid">
-                    <a href="blog-ugc-hook-formula.html" class="related-card">
+                    <a href="/pages/blog/blog-ugc-hook-formula.html" class="related-card">
                         <img src="resources/service-ugc.jpg" alt="Hook Formula">
                         <h4>The 3-Part UGC Hook Formula</h4>
                         <span class="read-more">Read More →</span>
                     </a>
-                    <a href="blog-ab-testing-ugc.html" class="related-card">
+                    <a href="/pages/blog/blog-ab-testing-ugc.html" class="related-card">
                         <img src="resources/creator-2.jpg" alt="A/B Testing">
                         <h4>A/B Testing UGC: What Works</h4>
                         <span class="read-more">Read More →</span>
@@ -248,7 +255,7 @@
         </div>
     </article>
 
-    <script src="../assets/js/main.js"></script>
+    <script src="/assets/js/main.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             if (typeof lucide !== 'undefined') {
