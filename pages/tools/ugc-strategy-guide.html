@@ -11,6 +11,61 @@
     <link rel="stylesheet" href="/assets/css/styles.css">
 </head>
 <body>
+    <style>
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem 0;
+        }
+        
+        .resource-card {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        
+        .resource-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .resource-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .resource-details {
+            padding: 1.5rem;
+        }
+        
+        .resource-details h3 {
+            margin: 0 0 1rem;
+            font-size: 1.25rem;
+        }
+        
+        .resource-details ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 1.5rem;
+        }
+        
+        .resource-details li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .resource-details p {
+            margin: 0 0 1.5rem;
+            color: #666;
+        }
+        
+        .resource-details .btn {
+            width: 100%;
+            text-align: center;
+        }
+    </style>
     <!-- Navigation -->
     
     <nav class="main-nav">
@@ -39,15 +94,65 @@
                 <h1>The Complete UGC Strategy Guide</h1>
                 <p class="lead">Everything you need to build a profitable UGC program from scratch. Used by 100+ D2C brands to increase ROAS by 300%+.</p>
                 
-                <div class="guide-preview">
-                    <div class="preview-card">
-                        <img src="resources/service-ugc.jpg" alt="UGC Strategy Guide Preview" class="guide-image">
-                        <div class="guide-details">
-                            <h3>What's Inside:</h3>
+                <div class="resources-grid">
+                    <div class="resource-card">
+                        <img src="/assets/images/ugc-photo-1.png" alt="UGC Strategy Guide Preview" class="resource-image">
+                        <div class="resource-details">
+                            <h3>UGC Strategy Guide</h3>
                             <ul>
-                                <li>📋 Complete UGC campaign setup checklist</li>
-                                <li>🎯 Creator sourcing and vetting framework</li>
-                                <li>📝 Proven brief templates that get results</li>
+                                <li>📋 Campaign setup checklist</li>
+                                <li>🎯 Creator sourcing framework</li>
+                                <li>📝 Brief templates</li>
+                                <li>📊 ROI tracking templates</li>
+                            </ul>
+                            <a href="/pages/tools/ugc-strategy-guide.html" class="btn btn-primary">Download Guide</a>
+                        </div>
+                    </div>
+
+                    <div class="resource-card">
+                        <img src="/assets/images/ugc-photo-2.png" alt="Content Cost Calculator" class="resource-image">
+                        <div class="resource-details">
+                            <h3>Content Cost Calculator</h3>
+                            <p>Calculate the exact cost of your UGC campaign based on your goals and requirements.</p>
+                            <a href="/pages/tools/content-cost-calculator.html" class="btn btn-primary">Try Calculator</a>
+                        </div>
+                    </div>
+
+                    <div class="resource-card">
+                        <img src="/assets/images/ugc-photo-3.png" alt="Creator Brief Template" class="resource-image">
+                        <div class="resource-details">
+                            <h3>Creator Brief Template</h3>
+                            <p>Our proven template for briefing creators and getting consistent results.</p>
+                            <a href="/pages/tools/creator-brief-template.html" class="btn btn-primary">Get Template</a>
+                        </div>
+                    </div>
+
+                    <div class="resource-card">
+                        <img src="/assets/images/ugc-photo-4.png" alt="ROI Calculator" class="resource-image">
+                        <div class="resource-details">
+                            <h3>ROI Calculator</h3>
+                            <p>Calculate the potential return on investment for your UGC campaign.</p>
+                            <a href="/pages/tools/roi-calculator.html" class="btn btn-primary">Calculate ROI</a>
+                        </div>
+                    </div>
+
+                    <div class="resource-card">
+                        <img src="/assets/images/ugc-photo-5.png" alt="Content Calendar" class="resource-image">
+                        <div class="resource-details">
+                            <h3>UGC Content Calendar</h3>
+                            <p>Plan and organize your UGC content strategy with our template.</p>
+                            <a href="/pages/tools/ugc-content-calendar.html" class="btn btn-primary">Get Calendar</a>
+                        </div>
+                    </div>
+
+                    <div class="resource-card">
+                        <img src="/assets/images/ugc-photo-6.png" alt="ROI Tracking" class="resource-image">
+                        <div class="resource-details">
+                            <h3>ROI Tracking Spreadsheet</h3>
+                            <p>Track and measure the performance of your UGC campaigns.</p>
+                            <a href="/pages/tools/roi-tracking-spreadsheet.html" class="btn btn-primary">Get Spreadsheet</a>
+                        </div>
+                    </div>
                                 <li>📊 Performance tracking spreadsheet</li>
                                 <li>🚀 Scaling strategies for 6-7 figure brands</li>
                             </ul>
