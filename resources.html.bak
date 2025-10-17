@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free UGC Resources - Templates, Guides & Tools | D2C Brands</title>
+  <meta name="description" content="Free resources to scale your D2C brand with UGC: templates, guides, and tools. Download and implement today." />
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <style>
+    /* (kept the original CSS from the earlier version but optimized asset paths are handled in HTML below) */
+    :root{--color-warm-stone:#F5F1EB;--color-sage:#8B9A7A;--color-charcoal:#2C2C2C;--color-clay:#C4A484;--color-cream:#FAF8F5;--color-muted-teal:#7A9B9B;--color-soft-terracotta:#D4A574;--font-serif:'Crimson Text',serif;--font-sans:'Inter',sans-serif;--radius-soft:12px;--radius-softer:16px;--shadow-subtle:0 2px 8px rgba(44,44,44,.1);--shadow-lift:0 4px 16px rgba(44,44,44,.15);--shadow-glow:0 8px 32px rgba(139,154,122,.15);--transition-gentle:all .3s cubic-bezier(.4,0,.2,1);--transition-smooth:all .4s cubic-bezier(.25,.46,.45,.94)}
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:var(--font-sans);line-height:1.7;color:var(--color-charcoal);background:var(--color-warm-stone);overflow-x:hidden}
+    h1,h2,h3,h4,h5,h6{font-family:var(--font-serif);font-weight:700;line-height:1.2;margin-bottom:1rem}
+    h1{font-size:clamp(2.5rem,5vw,4rem)}h2{font-size:clamp(2rem,4vw,3rem)}h3{font-size:clamp(1.5rem,3vw,2rem)}
+    p{margin-bottom:1rem;font-size:1.1rem;line-height:1.7}
+    .container{max-width:1280px;margin:0 auto;padding:0 2rem}
+    .section{padding:6rem 0;position:relative}
+    /* Nav + cards styles kept minimal here (main stylesheet handles rest) */
+  </style>
+</head>
+<body>
+  <!-- Navigation (restored look) -->
+  <nav class="main-nav">
+    <div class="nav-container">
+      <a href="/" class="logo" style="display:flex;align-items:center;gap:.75rem;">
+        <img src="/assets/images/makeugclogo-01.jpg" alt="MakeUGC Logo" style="height:50px;width:50px;border-radius:50%;object-fit:cover">
+        <span>MakeUGC</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/pages/services.html">Services</a></li>
+        <li><a href="/pages/creators.html">Creators</a></li>
+        <li><a href="/pages/blog/blog.html">Blog</a></li>
+        <li><a href="/pages/about.html">About</a></li>
+        <li><a href="/pages/tools/ugc-strategy-guide.html" style="color:var(--color-sage);">Resources</a></li>
+        <li><a href="/pages/contact.html" class="btn-secondary">Contact</a></li>
+      </ul>
+      <button class="mobile-nav-toggle">☰</button>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero section">
+    <div class="container">
+      <div class="hero-content fade-in">
+        <h1>Free Resources to Scale Your D2C Brand with UGC</h1>
+        <p>Templates, guides, and tools used by 1,000+ brands. Download what you need, implement today.</p>
+        <div class="hero-stats">
+          <div class="stat-item fade-in stagger-1"><span class="stat-number">50+</span><span class="stat-label">Free Templates</span></div>
+          <div class="stat-item fade-in stagger-2"><span class="stat-number">1,200+</span><span class="stat-label">Active Users</span></div>
+          <div class="stat-item fade-in stagger-3"><span class="stat-number">₹2.5Cr+</span><span class="stat-label">Revenue Generated</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Templates & Worksheets (restored content) -->
+  <section class="section category-section">
+    <div class="container">
+      <div class="category-header fade-in">
+        <h2>Templates & Worksheets</h2>
+        <p>Ready-to-use templates that have generated millions in revenue for D2C brands</p>
+      </div>
+
+      <div class="resources-grid">
+        <div class="resource-card fade-in stagger-1">
+          <div class="resource-header">
+            <div class="resource-icon"><i data-lucide="calendar"></i></div>
+            <div class="resource-badge"><i data-lucide="file-text"></i>Template</div>
+          </div>
+          <h3>UGC Content Calendar Template</h3>
+          <p>Plan your next 30 days of UGC content with our proven calendar. Includes campaign tracking, creator management, and performance metrics.</p>
+          <div class="resource-meta"><div class="meta-item"><i data-lucide="download"></i>2,450+ downloads</div><div class="meta-item"><i data-lucide="star"></i>4.9/5 rating</div></div>
+          <div class="resource-actions">
+            <button class="btn-primary" onclick="alert('Download link would be sent via email after form capture.')"><i data-lucide="download"></i>Download Free</button>
+            <button class="btn-icon" title="Share"><i data-lucide="share-2"></i></button>
+          </div>
+        </div>
+
+        <div class="resource-card fade-in stagger-2">
+          <div class="resource-header">
+            <div class="resource-icon"><i data-lucide="user-check"></i></div>
+            <div class="resource-badge"><i data-lucide="file-text"></i>Template</div>
+          </div>
+          <h3>Creator Brief Template</h3>
+          <p>Align creators with your brand voice and conversion goals. Complete brief template with examples and best practices.</p>
+          <div class="resource-meta"><div class="meta-item"><i data-lucide="users"></i>Premium Tool</div><div class="meta-item"><i data-lucide="zap"></i>Interactive</div></div>
+          <div class="resource-actions">
+            <button class="btn-primary" onclick="checkAuthAndLaunch('/pages/tools/creator-brief-template.html')"><i data-lucide="external-link"></i>Launch Template</button>
+            <button class="btn-icon" title="Bookmark"><i data-lucide="bookmark"></i></button>
+          </div>
+        </div>
+
+        <div class="resource-card fade-in stagger-3">
+          <div class="resource-header">
+            <div class="resource-icon"><i data-lucide="trending-up"></i></div>
+            <div class="resource-badge"><i data-lucide="file-text"></i>Spreadsheet</div>
+          </div>
+          <h3>ROI Tracking Spreadsheet</h3>
+          <p>Track conversions, ROAS, and key UGC performance metrics. Advanced formulas included for automatic calculations.</p>
+          <div class="resource-meta"><div class="meta-item"><i data-lucide="users"></i>Premium Tool</div><div class="meta-item"><i data-lucide="calculator"></i>Auto-Calculate</div></div>
+          <div class="resource-actions">
+            <button class="btn-primary" onclick="checkAuthAndLaunch('/pages/tools/roi-tracking-spreadsheet.html')"><i data-lucide="external-link"></i>Launch Tracker</button>
+            <button class="btn-icon" title="Share"><i data-lucide="share-2"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Guides & E-books (restored) -->
+  <section class="section">
+    <div class="container">
+      <div class="category-header fade-in"><h2>Guides & E-books</h2><p>In-depth resources to master UGC strategy and execution</p></div>
+      <div class="resources-grid">
+        <div class="resource-card featured-resource fade-in">
+          <div class="featured-content"><div><h3>🎬 The Complete UGC Playbook</h3><p>150+ pages of copy-and-paste hooks, scripts, and strategies responsible for millions in revenue. Everything you need to launch a successful UGC program.</p><div style="display:flex;gap:1rem;margin-top:1.5rem;"><button class="btn-primary" onclick="alert('Download link would be sent via email after form capture.')"><i data-lucide="download"></i>Get Free Playbook</button></div></div><div style="font-size:4rem;opacity:.3;">📚</div></div>
+        </div>
+
+        <div class="resource-card fade-in stagger-1">
+          <div class="resource-header"><div class="resource-icon"><i data-lucide="book-open"></i></div><div class="resource-badge"><i data-lucide="book"></i>E-book</div></div>
+          <h3>Hook Scripts That Convert</h3>
+          <p>50+ proven hooks and scripts that work across TikTok, Reels, Meta Ads, and YouTube. Includes performance data and optimization tips.</p>
+          <div class="resource-meta"><div class="meta-item"><i data-lucide="download"></i>3,200+ downloads</div><div class="meta-item"><i data-lucide="clock"></i>45 min read</div></div>
+          <div class="resource-actions"><button class="btn-primary" onclick="alert('Access would be granted after email signup.')"><i data-lucide="download"></i>Get E-book</button><button class="btn-icon" title="Preview"><i data-lucide="eye"></i></button></div>
+        </div>
+
+        <div class="resource-card fade-in stagger-2">
+          <div class="resource-header"><div class="resource-icon"><i data-lucide="target"></i></div><div class="resource-badge"><i data-lucide="compass"></i>Guide</div></div>
+          <h3>Platform-Specific UGC Best Practices</h3>
+          <p>Detailed guide on what works best across different platforms. Optimization strategies, format recommendations, and timing insights.</p>
+          <div class="resource-meta"><div class="meta-item"><i data-lucide="download"></i>1,800+ downloads</div><div class="meta-item"><i data-lucide="clock"></i>30 min read</div></div>
+          <div class="resource-actions"><button class="btn-primary" onclick="alert('Access would be granted after email signup.')"><i data-lucide="download"></i>Get Guide</button><button class="btn-icon" title="Share"><i data-lucide="share-2"></i></button></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tools & Calculators (restored) -->
+  <section class="section category-section">
+    <div class="container">
+      <div class="category-header fade-in"><h2>Tools & Calculators</h2><p>Interactive tools to optimize your UGC strategy and measure success</p></div>
+      <div class="resources-grid">
+        <div class="resource-card fade-in stagger-1">
+          <div class="resource-header"><div class="resource-icon"><i data-lucide="calculator"></i></div><div class="resource-badge"><i data-lucide="zap"></i>Tool</div></div>
+          <h3>ROI Calculator</h3>
+          <p>Estimate revenue lift from adopting UGC across your campaigns. Get instant projections based on your current metrics.</p>
+          <div class="resource-meta"><div class="meta-item"><i data-lucide="users"></i>5,600+ users</div><div class="meta-item"><i data-lucide="zap"></i>Instant results</div></div>
+          <div class="resource-actions"><a href="/index.html#roiCalculatorSection" class="btn-primary"><i data-lucide="calculator"></i>Try Calculator</a><button class="btn-icon" title="Share"><i data-lucide="share-2"></i></button></div>
+        </div>
+
+        <div class="resource-card fade-in stagger-2">
+          <div class="resource-header"><div class="resource-icon"><i data-lucide="calendar-days"></i></div><div class="resource-badge"><i data-lucide="zap"></i>Tool</div></div>
+          <h3>UGC Content Calendar</h3>
+          <p>Professional 30-day content planner with creator tracking, performance metrics, and campaign management features.</p>
+          <div class="resource-meta"><div class="meta-item"><i data-lucide="users"></i>Premium Tool</div><div class="meta-item"><i data-lucide="calendar"></i>30-day planner</div></div>
+          <div class="resource-actions"><button class="btn-primary" onclick="checkAuthAndLaunch('/pages/tools/ugc-content-calendar.html')"><i data-lucide="external-link"></i>Launch Tool</button><button class="btn-icon" title="Bookmark"><i data-lucide="bookmark"></i></button></div>
+        </div>
+
+        <div class="resource-card fade-in stagger-3">
+          <div class="resource-header"><div class="resource-icon"><i data-lucide="indian-rupee"></i></div><div class="resource-badge"><i data-lucide="zap"></i>Tool</div></div>
+          <h3>Content Cost Calculator</h3>
+          <p>Get accurate estimates for your monthly UGC content pipeline. Includes creator fees, production costs, and management overhead.</p>
+          <div class="resource-meta"><div class="meta-item"><i data-lucide="users"></i>Premium Tool</div><div class="meta-item"><i data-lucide="trending-up"></i>Cost optimizer</div></div>
+          <div class="resource-actions"><button class="btn-primary" onclick="checkAuthAndLaunch('/pages/tools/content-cost-calculator.html')"><i data-lucide="calculator"></i>Calculate Costs</button><button class="btn-icon" title="Share"><i data-lucide="share-2"></i></button></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="section newsletter-section">
+    <div class="container"><div class="fade-in"><h2>Never Miss a UGC Insight</h2><p>Get our latest strategies, templates, and case studies delivered to your inbox weekly</p><form class="newsletter-form" onsubmit="handleNewsletterSignup(event)"><input type="email" class="newsletter-input" placeholder="Enter your email address" required><button type="submit" class="newsletter-btn">Subscribe</button></form><p class="newsletter-disclaimer">Join 15,000+ marketers getting UGC insights weekly. No spam, unsubscribe anytime.</p></div></div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer"><div class="container"><div class="footer-content"><div class="footer-section"><div style="display:flex;align-items:center;gap:.5rem;margin-bottom:1rem;"><img src="/assets/images/makeugclogo-01.jpg" alt="MakeUGC Logo" style="height:35px;width:35px;border-radius:50%;object-fit:cover"><h4 style="margin:0">MakeUGC</h4></div><p>MakeUGC.in<br>4G KrishtiKunja, Airport, Kolkata, India</p><p>contact@makeugc.in<br>Mobile: +91 9239161632</p></div><div class="footer-section"><h4>Quick Links</h4><p><a href="/">Home</a><br><a href="/pages/services.html">Services</a><br><a href="/pages/creators.html">Creators</a><br><a href="/pages/blog/blog.html">Blog</a><br><a href="/pages/contact.html">Contact</a></p></div><div class="footer-section"><h4>Resources</h4><p><a href="/pages/tools/ugc-strategy-guide.html">Free Templates</a><br><a href="#templates">Creator Brief Template</a><br><a href="/index.html#roiCalculatorSection">ROI Calculator</a><br><a href="/pages/blog/blog.html">Case Studies</a></p></div><div class="footer-section"><h4>Trust & Legal</h4><p>Trusted by 50+ D2C Brands<br>Meta Business Partner<br><a href="/pages/legal/security.html">🛡️ Your Data is Secure</a></p></div></div><div class="footer-bottom"><p>© 2025 MakeUGC • All rights reserved • <a href="/pages/legal/privacy-policy.html">Privacy Policy</a> • <a href="/pages/legal/terms-conditions.html">Terms of Service</a> • <a href="/pages/legal/refund-policy.html">Refund Policy</a> • <a href="/pages/legal/security.html">Security</a></p></div></div></footer>
+
+  <script>
+    function handleNewsletterSignup(e){e.preventDefault();const f=e.target,b=f.querySelector('button[type="submit"]'),t=b.textContent;b.textContent='Subscribing...';b.disabled=!0;setTimeout(()=>{alert('Thank you for subscribing! Check your email for the latest UGC insights.');b.textContent=t;b.disabled=!1;f.reset()},2e3)}
+    let pendingToolUrl='';
+    function checkAuthAndLaunch(toolUrl){const currentUser=localStorage.getItem('ugc_current_user');if(currentUser){window.open(toolUrl,'_blank')}else{pendingToolUrl=toolUrl;document.getElementById('authModal').style.display='flex';document.body.style.overflow='hidden'}}
+    function closeAuthModal(){document.getElementById('authModal').style.display='none';document.body.style.overflow='';clearAuthMessage()}
+    function switchAuthTab(tab){document.querySelectorAll('.auth-tab').forEach(t=>t.classList.remove('active'));event.target.classList.add('active');document.querySelectorAll('.auth-section').forEach(s=>s.classList.remove('active'));document.getElementById(tab+'-section').classList.add('active');clearAuthMessage()}
+    function handleModalLogin(event){event.preventDefault();clearAuthMessage();const email=document.getElementById('modal-login-email').value,password=document.getElementById('modal-login-password').value,loginBtn=document.getElementById('modal-login-btn');loginBtn.textContent='Signing In...';loginBtn.disabled=!0;setTimeout(()=>{const users=JSON.parse(localStorage.getItem('ugc_users')||'[]');const user=users.find(u=>u.email===email&&u.password===password);if(user){localStorage.setItem('ugc_current_user',JSON.stringify({id:user.id,name:user.name,email:user.email,company:user.company,loginTime:new Date().toISOString()}));showAuthMessage('Success! Opening tool...','success');setTimeout(()=>{closeAuthModal();window.open(pendingToolUrl,'_blank')},1e3)}else{showAuthMessage('Invalid email or password. Try demo@makeugc.in / demo123','error');loginBtn.textContent='Sign In →';loginBtn.disabled=!1}},1e3)}
+    function handleModalSignup(e){e.preventDefault();window.open(pendingToolUrl,'_blank');closeAuthModal()}
+    function showAuthMessage(message,type){const m=document.getElementById('auth-message');m.textContent=message;m.className=`auth-message ${type}`}
+    function clearAuthMessage(){document.getElementById('auth-message').className='auth-message'}
+    window.addEventListener('load',()=>{const users=JSON.parse(localStorage.getItem('ugc_users')||'[]');if(users.length===0){const demoUser={id:1,name:'Demo User',email:'demo@makeugc.in',company:'Demo Company',password:'demo123',createdAt:new Date().toISOString()};localStorage.setItem('ugc_users',JSON.stringify([demoUser]))}if(typeof lucide!=='undefined'){lucide.createIcons()}const observerOptions={threshold:.1,rootMargin:'0px 0px -50px 0px'};const observer=new IntersectionObserver((entries)=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible')}}),observerOptions});document.querySelectorAll('.fade-in').forEach(el=>observer.observe(el))});document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeAuthModal()}})
+  </script>
+
+  <script src="/assets/js/main.js"></script>
+
+  <!-- Login Modal (restored) -->
+  <div class="auth-modal" id="authModal" style="display:none;">
+    <div class="auth-modal-overlay" onclick="closeAuthModal()"></div>
+    <div class="auth-modal-content">
+      <div class="auth-modal-header"><h2><i data-lucide="target" style="display:inline;margin-right:.5rem"></i>Want Even More?</h2><p>Access premium UGC tools & templates</p><button class="close-btn" onclick="closeAuthModal()">×</button></div>
+      <div class="auth-modal-body">
+        <div class="auth-tabs"><button class="auth-tab active" onclick="switchAuthTab('login')">Sign In</button><button class="auth-tab" onclick="switchAuthTab('signup')">Sign Up</button></div>
+        <div id="login-section" class="auth-section active"><form onsubmit="handleModalLogin(event)"><div class="form-group"><input type="email" placeholder="Email Address" required id="modal-login-email"></div><div class="form-group"><input type="password" placeholder="Password" required id="modal-login-password"></div><button type="submit" class="auth-submit-btn" id="modal-login-btn">Sign In →</button></form><p class="auth-demo-info">Demo: demo@makeugc.in / demo123</p></div>
+        <div id="signup-section" class="auth-section"><form onsubmit="handleModalSignup(event)"><div class="form-group"><input type="text" placeholder="Full Name" required id="modal-signup-name"></div><div class="form-group"><input type="email" placeholder="Email Address" required id="modal-signup-email"></div><div class="form-group"><input type="text" placeholder="Company (Optional)" id="modal-signup-company"></div><div class="form-group"><input type="password" placeholder="Password (6+ chars)" required minlength="6" id="modal-signup-password"></div><button type="submit" class="auth-submit-btn" id="modal-signup-btn">Create Account →</button></form></div>
+        <div id="auth-message" class="auth-message"></div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    /* minimal modal styles (existing global CSS contains full styling) */
+    .auth-modal{position:fixed;top:0;left:0;width:100%;height:100%;z-index:1000;display:flex;align-items:center;justify-content:center;padding:20px}
+    .auth-modal-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(44,44,44,.8);backdrop-filter:blur(4px)}
+  </style>
+
+</body>
+</html>
