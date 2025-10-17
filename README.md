@@ -35,17 +35,35 @@ A modern, mobile-responsive website for a User-Generated Content (UGC) agency sp
 ## 📂 Project Structure
 
 ```
-├── index.html              # Main landing page
-├── services.html          # Services overview
-├── creators.html          # Creator community page
-├── blog/                  # Blog articles
-│   ├── ugc-hook-formula.html
-│   ├── ab-testing-ugc.html
-│   └── creator-brief-template.html
-├── resources/            # Downloadable resources
-├── styles.css           # Global styles
-├── main.js             # Core JavaScript
-└── assets/            # Images and media files
+src/
+├── index.html                      # Main landing page
+├── assets/
+│   ├── css/                       # Stylesheets
+│   │   └── styles.css
+│   ├── js/                       # JavaScript files
+│   │   ├── main.js
+│   │   └── auth-protection.js
+│   └── images/                  # Image assets
+│       ├── makeugclogo-01.jpg
+│       └── ugc-photo-*.png
+├── pages/
+│   ├── about.html              # About page
+│   ├── contact.html           # Contact page
+│   ├── creators.html         # Creator community
+│   ├── services.html        # Services overview
+│   ├── blog/               # Blog articles
+│   │   ├── blog.html
+│   │   ├── ugc-hook-formula.html
+│   │   └── ab-testing-ugc.html
+│   ├── tools/             # Interactive tools
+│   │   ├── roi-calculator.html
+│   │   ├── content-cost-calculator.html
+│   │   └── service-quiz.html
+│   └── legal/           # Legal documents
+│       ├── privacy-policy.html
+│       ├── terms-conditions.html
+│       └── refund-policy.html
+└── resources/         # Downloadable resources
 ```
 
 ## 🔑 Key Features
