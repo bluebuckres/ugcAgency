@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In - UGC Agency Resources</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --color-warm-stone: #F5F1EB;
+            --color-sage: #8B9A7A;
+            --color-charcoal: #2C2C2C;
+            --color-clay: #C4A484;
+            --color-cream: #FAF8F5;
+            --color-muted-teal: #7A9B9B;
+            --color-soft-terracotta: #D4A574;
+            
+            --font-serif: 'Crimson Text', serif;
+            --font-sans: 'Inter', sans-serif;
+            
+            --radius-soft: 12px;
+            --radius-softer: 16px;
+            --shadow-subtle: 0 2px 8px rgba(44, 44, 44, 0.1);
+            --shadow-lift: 0 4px 16px rgba(44, 44, 44, 0.15);
+            
+            --transition-gentle: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background: var(--color-warm-stone);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            color: var(--color-charcoal);
+        }
+
+        .auth-container {
+            background: var(--color-cream);
+            border-radius: var(--radius-softer);
+            box-shadow: var(--shadow-lift);
+            overflow: hidden;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .auth-header {
+            background: var(--color-sage);
+            color: var(--color-cream);
+            padding: 40px 30px;
+            text-align: center;
+        }
+
+        .auth-header h1 {
+            font-family: var(--font-serif);
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+
+        .auth-header p {
+            opacity: 0.9;
+            font-size: 14px;
+        }
+
+        .auth-form {
+            padding: 40px 30px;
+        }
+
+        .form-tabs {
+            display: flex;
+            margin-bottom: 30px;
+            background: var(--color-warm-stone);
+            border-radius: var(--radius-soft);
+            padding: 4px;
+        }
+
+        .tab-btn {
+            flex: 1;
+            padding: 12px;
+            background: none;
+            border: none;
+            border-radius: var(--radius-soft);
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition-gentle);
+            color: var(--color-charcoal);
+        }
+
+        .tab-btn.active {
+            background: var(--color-sage);
+            color: var(--color-cream);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--color-charcoal);
+            margin-bottom: 8px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid rgba(139, 154, 122, 0.2);
+            border-radius: var(--radius-soft);
+            font-size: 14px;
+            transition: var(--transition-gentle);
+            background: white;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--color-sage);
+            box-shadow: 0 0 0 3px rgba(139, 154, 122, 0.1);
+        }
+
+        .btn {
+            width: 100%;
+            padding: 14px;
+            background: var(--color-sage);
+            color: var(--color-cream);
+            border: none;
+            border-radius: var(--radius-soft);
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition-gentle);
+            margin-bottom: 20px;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lift);
+            background: var(--color-muted-teal);
+        }
+
+        .btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .auth-footer {
+            text-align: center;
+            padding: 20px;
+            background: var(--color-warm-stone);
+            font-size: 13px;
+            color: rgba(44, 44, 44, 0.7);
+        }
+
+        .auth-footer a {
+            color: var(--color-sage);
+            text-decoration: none;
+        }
+
+        .error-message {
+            background: rgba(212, 165, 116, 0.1);
+            border: 1px solid var(--color-soft-terracotta);
+            color: var(--color-soft-terracotta);
+            padding: 12px;
+            border-radius: var(--radius-soft);
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        .success-message {
+            background: rgba(139, 154, 122, 0.1);
+            border: 1px solid var(--color-sage);
+            color: var(--color-sage);
+            padding: 12px;
+            border-radius: var(--radius-soft);
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        .form-section {
+            display: none;
+        }
+
+        .form-section.active {
+            display: block;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            margin-top: 4px;
+        }
+
+        .checkbox-group label {
+            font-size: 13px;
+            line-height: 1.4;
+            color: rgba(44, 44, 44, 0.8);
+        }
+
+        .checkbox-group a {
+            color: var(--color-sage);
+        }
+
+        @media (max-width: 480px) {
+            .auth-container {
+                margin: 10px;
+            }
+            
+            .auth-header,
+            .auth-form {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-header">
+            <h1>🎬 Welcome Back</h1>
+            <p>Access premium UGC resources & tools</p>
+        </div>
+
+        <div class="auth-form">
+            <div class="form-tabs">
+                <button class="tab-btn active" onclick="switchTab('login')">Sign In</button>
+                <button class="tab-btn" onclick="switchTab('signup')">Sign Up</button>
+            </div>
+
+            <div id="error-container"></div>
+
+            <!-- Login Form -->
+            <div id="login-form" class="form-section active">
+                <form onsubmit="handleLogin(event)">
+                    <div class="form-group">
+                        <label class="form-label">Email Address</label>
+                        <input type="email" class="form-control" id="login-email" required placeholder="your@email.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Password</label>
+                        <input type="password" class="form-control" id="login-password" required placeholder="••••••••">
+                    </div>
+
+                    <button type="submit" class="btn" id="login-btn">Sign In →</button>
+                </form>
+
+                <div style="text-align: center;">
+                    <a href="#" onclick="showForgotPassword()" style="color: var(--color-sage); font-size: 14px;">Forgot your password?</a>
+                </div>
+            </div>
+
+            <!-- Signup Form -->
+            <div id="signup-form" class="form-section">
+                <form onsubmit="handleSignup(event)">
+                    <div class="form-group">
+                        <label class="form-label">Full Name</label>
+                        <input type="text" class="form-control" id="signup-name" required placeholder="Your full name">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Email Address</label>
+                        <input type="email" class="form-control" id="signup-email" required placeholder="your@email.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Company Name</label>
+                        <input type="text" class="form-control" id="signup-company" placeholder="Your company (optional)">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Password</label>
+                        <input type="password" class="form-control" id="signup-password" required placeholder="••••••••" minlength="6">
+                    </div>
+
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="terms-checkbox" required>
+                        <label for="terms-checkbox">
+                            I agree to the <a href="terms-conditions.html" target="_blank">Terms of Service</a> and <a href="privacy-policy.html" target="_blank">Privacy Policy</a>
+                        </label>
+                    </div>
+
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="newsletter-checkbox" checked>
+                        <label for="newsletter-checkbox">
+                            Send me UGC tips, case studies, and exclusive resources
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn" id="signup-btn">Create Account →</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="auth-footer">
+            <p>🎯 Join 1,200+ marketers using our UGC resources</p>
+            <p><a href="index.html">← Back to Homepage</a></p>
+        </div>
+    </div>
+
+    <script>
+        function switchTab(tab) {
+            // Update tab buttons
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            // Update form sections
+            document.querySelectorAll('.form-section').forEach(section => section.classList.remove('active'));
+            document.getElementById(tab + '-form').classList.add('active');
+
+            // Clear any error messages
+            clearMessages();
+        }
+
+        function handleLogin(event) {
+            event.preventDefault();
+            clearMessages();
+
+            const email = document.getElementById('login-email').value;
+            const password = document.getElementById('login-password').value;
+            const loginBtn = document.getElementById('login-btn');
+
+            loginBtn.textContent = 'Signing In...';
+            loginBtn.disabled = true;
+
+            // Simulate API call
+            setTimeout(() => {
+                const users = JSON.parse(localStorage.getItem('ugc_users') || '[]');
+                const user = users.find(u => u.email === email && u.password === password);
+
+                if (user) {
+                    // Store current user session
+                    localStorage.setItem('ugc_current_user', JSON.stringify({
+                        id: user.id,
+                        name: user.name,
+                        email: user.email,
+                        company: user.company,
+                        loginTime: new Date().toISOString()
+                    }));
+
+                    showMessage('Success! Redirecting to resources...', 'success');
+                    
+                    setTimeout(() => {
+                        const redirectUrl = new URLSearchParams(window.location.search).get('redirect') || 'resources.html';
+                        window.location.href = redirectUrl;
+                    }, 1000);
+                } else {
+                    showMessage('Invalid email or password. Please try again.', 'error');
+                    loginBtn.textContent = 'Sign In →';
+                    loginBtn.disabled = false;
+                }
+            }, 1000);
+        }
+
+        function handleSignup(event) {
+            event.preventDefault();
+            clearMessages();
+
+            const name = document.getElementById('signup-name').value;
+            const email = document.getElementById('signup-email').value;
+            const company = document.getElementById('signup-company').value;
+            const password = document.getElementById('signup-password').value;
+            const signupBtn = document.getElementById('signup-btn');
+
+            signupBtn.textContent = 'Creating Account...';
+            signupBtn.disabled = true;
+
+            // Simulate API call
+            setTimeout(() => {
+                const users = JSON.parse(localStorage.getItem('ugc_users') || '[]');
+                const existingUser = users.find(u => u.email === email);
+
+                if (existingUser) {
+                    showMessage('An account with this email already exists. Please sign in instead.', 'error');
+                    signupBtn.textContent = 'Create Account →';
+                    signupBtn.disabled = false;
+                    return;
+                }
+
+                // Create new user
+                const newUser = {
+                    id: Date.now(),
+                    name,
+                    email,
+                    company,
+                    password,
+                    createdAt: new Date().toISOString(),
+                    newsletter: document.getElementById('newsletter-checkbox').checked
+                };
+
+                users.push(newUser);
+                localStorage.setItem('ugc_users', JSON.stringify(users));
+
+                // Auto login
+                localStorage.setItem('ugc_current_user', JSON.stringify({
+                    id: newUser.id,
+                    name: newUser.name,
+                    email: newUser.email,
+                    company: newUser.company,
+                    loginTime: new Date().toISOString()
+                }));
+
+                showMessage('Account created successfully! Redirecting...', 'success');
+                
+                setTimeout(() => {
+                    const redirectUrl = new URLSearchParams(window.location.search).get('redirect') || 'resources.html';
+                    window.location.href = redirectUrl;
+                }, 1000);
+            }, 1000);
+        }
+
+        function showMessage(message, type) {
+            const container = document.getElementById('error-container');
+            container.innerHTML = `<div class="${type}-message">${message}</div>`;
+        }
+
+        function clearMessages() {
+            document.getElementById('error-container').innerHTML = '';
+        }
+
+        function showForgotPassword() {
+            alert('Password reset functionality would be implemented in production. For demo purposes, try:\nEmail: demo@ugcagency.com\nPassword: demo123');
+        }
+
+
+        // Check if already logged in
+        window.addEventListener('load', () => {
+            const currentUser = localStorage.getItem('ugc_current_user');
+            if (currentUser) {
+                const redirectUrl = new URLSearchParams(window.location.search).get('redirect') || 'resources.html';
+                window.location.href = redirectUrl;
+            }
+
+            // Add demo user for testing
+            const users = JSON.parse(localStorage.getItem('ugc_users') || '[]');
+            if (users.length === 0) {
+                const demoUser = {
+                    id: 1,
+                    name: 'Demo User',
+                    email: 'demo@ugcagency.com',
+                    company: 'Demo Company',
+                    password: 'demo123',
+                    createdAt: new Date().toISOString(),
+                    newsletter: true
+                };
+                localStorage.setItem('ugc_users', JSON.stringify([demoUser]));
+            }
+        });
+    </script>
+</body>
+</html>

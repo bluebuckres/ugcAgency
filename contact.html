@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | MakeUGC</title>
+  <meta name="description" content="Let's build something great together. Contact us for creators, production, or strategic guidance." />
+  <meta name="keywords" content="contact UGC agency, hire UGC creators, content creation services, book consultation, UGC strategy call">
+  <meta name="author" content="UGC Agency">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://makeugc.in/contact">
+  <meta property="og:title" content="Contact | MakeUGC">
+  <meta property="og:description" content="Let's build something great together. Contact us for creators, production, or strategic guidance.">
+  <meta property="og:image" content="https://makeugc.in/resources/og-image.jpg">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://makeugc.in/contact">
+  <meta property="twitter:title" content="Contact | MakeUGC">
+  <meta property="twitter:description" content="Contact us for creators, production, or strategic guidance.">
+  <meta property="twitter:image" content="https://makeugc.in/resources/twitter-image.jpg">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://makeugc.in/contact">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons -->
+  <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.js"></script>
+  <script>
+    // Fallback loading for Lucide
+    if (typeof lucide === 'undefined') {
+      const fallbackScript = document.createElement('script');
+      fallbackScript.src = 'https://unpkg.com/lucide@latest/dist/umd/lucide.js';
+      document.head.appendChild(fallbackScript);
+    }
+  </script>
+  <style>
+    :root { --color-warm-stone:#F5F1EB; --color-sage:#8B9A7A; --color-charcoal:#2C2C2C; --color-clay:#C4A484; --color-cream:#FAF8F5; --color-muted-teal:#7A9B9B; --color-soft-terracotta:#D4A574; --font-serif:'Crimson Text',serif; --font-sans:'Inter',sans-serif; --radius-soft:12px; --radius-softer:16px; --shadow-subtle:0 2px 8px rgba(44,44,44,.1); --shadow-lift:0 4px 16px rgba(44,44,44,.15); --transition-gentle:all .3s cubic-bezier(.4,0,.2,1) }
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:var(--font-sans);line-height:1.6;color:var(--color-charcoal);background:var(--color-warm-stone)}
+    h1,h2,h3,h4{font-family:var(--font-serif);font-weight:700;line-height:1.2;margin-bottom:1rem}
+    p{margin-bottom:1rem;font-size:1.1rem}
+    .container{max-width:1280px;margin:0 auto;padding:0 2rem}
+    .section{padding:5rem 0}
+    .section:nth-child(even){background:var(--color-cream)}
+    .main-nav{position:fixed;top:0;left:0;right:0;background:rgba(250,248,245,.95);backdrop-filter:blur(10px);z-index:1000;padding:1rem 0;border-bottom:1px solid rgba(139,154,122,.2)}
+    .nav-container{display:flex;justify-content:space-between;align-items:center;max-width:1280px;margin:0 auto;padding:0 2rem}
+    .logo{font-family:var(--font-serif);font-weight:700;color:var(--color-charcoal);text-decoration:none}
+    .nav-links{display:flex;list-style:none;gap:2rem}
+    .nav-links a{text-decoration:none;color:var(--color-charcoal);font-weight:500;position:relative;transition:var(--transition-gentle)}
+    .nav-links a:hover{color:var(--color-sage)}
+    .mobile-nav-toggle{display:none;background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--color-charcoal)}
+    .hero{min-height:60vh;display:flex;align-items:center;text-align:center;background:linear-gradient(135deg,var(--color-warm-stone),var(--color-cream))}
+    .grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem}
+    .card{background:#fff;border-radius:var(--radius-softer);padding:2rem;box-shadow:var(--shadow-subtle);transition:var(--transition-gentle)}
+    .card:hover{transform:translateY(-2px);box-shadow:var(--shadow-lift)}
+    
+    /* Contact Sections */
+    .contact-sections{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;margin:3rem 0}
+    .contact-section{background:#fff;border-radius:var(--radius-softer);padding:2rem;box-shadow:var(--shadow-subtle);border:2px solid transparent;transition:var(--transition-gentle);cursor:pointer}
+    .contact-section:hover{border-color:var(--color-sage);transform:translateY(-2px);box-shadow:var(--shadow-lift)}
+    .contact-section.active{border-color:var(--color-sage);background:var(--color-cream)}
+    .section-icon{width:60px;height:60px;background:var(--color-sage);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;color:white;font-size:1.5rem}
+    .section-title{font-size:1.3rem;font-weight:700;text-align:center;margin-bottom:0.5rem;color:var(--color-charcoal)}
+    .section-description{text-align:center;color:var(--color-charcoal);opacity:0.8;font-size:0.95rem;line-height:1.5}
+    
+    /* Contact Form */
+    .contact-form{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:2rem}
+    .contact-form .full{grid-column:1 / -1}
+    .form-group{display:flex;flex-direction:column;gap:0.5rem}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+    .hidden{display:none !important}
+    label{font-weight:600;font-size:.95rem;color:var(--color-charcoal);margin-bottom:0.5rem}
+    input, select, textarea{padding:1rem 1.25rem;border:2px solid var(--color-warm-stone);border-radius:var(--radius-soft);background:#fff;font-family:var(--font-sans);transition:var(--transition-gentle);font-size:1rem}
+    input:focus, select:focus, textarea:focus{outline:none;border-color:var(--color-sage);box-shadow:0 0 0 3px rgba(139,154,122,0.1)}
+    input::placeholder, textarea::placeholder{color:#999}
+    .required{color:var(--color-soft-terracotta)}
+    .btn{display:inline-flex;align-items:center;gap:.5rem;padding:1rem 2rem;border:none;border-radius:var(--radius-soft);font-weight:600;cursor:pointer;transition:var(--transition-gentle)}
+    .btn-primary{background:var(--color-sage);color:#fff}
+    .btn-secondary{background:transparent;color:var(--color-sage);border:2px solid var(--color-sage)}
+    .btn-primary:hover, .btn-secondary:hover{transform:translateY(-2px);box-shadow:var(--shadow-lift)}
+    @media(max-width:768px){.nav-links{display:none}.mobile-nav-toggle{display:block}.contact-form{grid-template-columns:1fr}.form-row{grid-template-columns:1fr}.contact-sections{grid-template-columns:1fr}.hero h1{font-size:2.5rem}}
+    @media(max-width:480px){.contact-section{padding:1.5rem}.card{padding:1.5rem}}
+    /* Footer styles consistent with home page */
+    .footer { background: var(--color-charcoal); color: white; padding: 3rem 0 1rem; }
+    .footer-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 2rem; }
+    .footer-section h4 { color: white; margin-bottom: 1rem; }
+    .footer-section p, .footer-section a { color: rgba(255, 255, 255, 0.8); text-decoration: none; line-height: 1.6; }
+    .footer-section a:hover { color: var(--color-sage); }
+    .footer-bottom { text-align: center; padding-top: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.1); color: rgba(255, 255, 255, 0.6); font-size: 0.9rem; }
+
+    /* Mobile Navigation Overlay */
+    .mobile-nav-overlay { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.3); opacity: 0; z-index: 1500; transition: opacity 0.3s ease; }
+    .mobile-nav-overlay.active { display: block; opacity: 1; }
+
+    /* Mobile menu styles (match home page) */
+    .mobile-menu { position: fixed; top: 0; right: -100%; width: min(85vw, 360px); height: 100vh; background: #fff; z-index: 2000; transition: var(--transition-gentle); box-shadow: -4px 0 20px rgba(0,0,0,0.1); }
+    .mobile-menu.active { right: 0; }
+    .mobile-menu-header { padding: 1.5rem; background: var(--color-sage); color: white; display: flex; justify-content: space-between; align-items: center; }
+    .mobile-menu-close { background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer; padding: 0.5rem; }
+    .mobile-menu-nav { padding: 1.5rem; }
+    .mobile-menu-nav ul { list-style: none; padding: 0; margin: 0; }
+    .mobile-menu-nav li { margin-bottom: 1rem; }
+    .mobile-menu-nav a { display: block; padding: 0.75rem 1rem; color: var(--color-charcoal); text-decoration: none; border-radius: 8px; font-weight: 500; }
+    .mobile-menu-nav a:hover, .mobile-menu-nav a.active { background: var(--color-sage); color: white; }
+  </style>
+</head>
+<body>
+  <nav class="main-nav">
+    <div class="nav-container">
+      <a href="index.html" class="logo" style="display: flex; align-items: center; gap: 0.75rem;">
+        <img src="makeugclogo-01.jpg" alt="MakeUGC Logo" style="height: 50px; width: 50px; border-radius: 50%; object-fit: cover;">
+        <span>MakeUGC</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="creators.html">Creators</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="#contact" class="btn btn-primary">Contact</a></li>
+      </ul>
+      <button class="mobile-nav-toggle"><i data-lucide="menu"></i></button>
+    </div>
+  </nav>
+
+  <section class="hero section">
+    <div class="container">
+      <h1>Let's Build Something Great Together</h1>
+      <p style="font-size: 1.2rem; max-width: 600px; margin: 0 auto 2rem;">Whether you're a brand looking for creators, an existing partner, or a prospective client—we're here to help you succeed with authentic UGC.</p>
+      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+        <a href="#contact-sections" class="btn btn-primary">Get Started</a>
+        <a href="https://wa.me/919239161632?text=Hi,%20I%27m%20interested%20in%20your%20UGC%20services" target="_blank" class="btn btn-secondary">Chat on WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="grid-3">
+        <div class="card">
+          <h3>Email Us</h3>
+          <p>contact@makeugc.in</p>
+          <p style="opacity:.8">For general inquiries and partnerships</p>
+        </div>
+        <div class="card">
+          <h3>Call Us</h3>
+          <p>+91 9239161632</p>
+          <p style="opacity:.8">Mon–Fri, 10 AM – 6 PM IST</p>
+        </div>
+        <div class="card">
+          <h3>Visit Us</h3>
+          <p>MakeUGC.in<br/>4G KrishtiKunja, Airport, Kolkata, India</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="contact-sections">
+    <div class="container">
+      <h2 style="text-align:center;margin-bottom:1rem;">How Can We Help You?</h2>
+      <p style="text-align:center;opacity:0.8;margin-bottom:3rem;font-size:1.1rem;">Choose your profile to get started with the right conversation</p>
+      
+      <div class="contact-sections">
+        <div class="contact-section" onclick="selectContactType('customer')" id="customer-section">
+          <div class="section-icon"><i data-lucide="shopping-bag"></i></div>
+          <h3 class="section-title">Customer</h3>
+          <p class="section-description">General inquiries, support, or questions about our services and approach.</p>
+        </div>
+        
+        <div class="contact-section" onclick="selectContactType('partner')" id="partner-section">
+          <div class="section-icon"><i data-lucide="handshake"></i></div>
+          <h3 class="section-title">Existing Partner</h3>
+          <p class="section-description">Already working with us? Let's discuss ongoing projects or new opportunities.</p>
+        </div>
+        
+        <div class="contact-section" onclick="selectContactType('client')" id="client-section">
+          <div class="section-icon"><i data-lucide="star"></i></div>
+          <h3 class="section-title">Existing Client</h3>
+          <p class="section-description">Account management, campaign updates, or additional service requests.</p>
+        </div>
+        
+        <div class="contact-section" onclick="selectContactType('prospect')" id="prospect-section">
+          <div class="section-icon"><i data-lucide="rocket"></i></div>
+          <h3 class="section-title">Prospective Client</h3>
+          <p class="section-description">Ready to start your UGC journey? Let's discuss your goals and how we can help.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="section" id="contact">
+    <div class="container">
+      <h2 style="text-align:center;margin-bottom:2rem;">Send Us a Message</h2>
+      <div id="contact-type-display" style="text-align:center;margin-bottom:2rem;padding:1rem;background:var(--color-warm-stone);border-radius:var(--radius-soft);display:none;">
+        <p style="margin:0;font-weight:600;color:var(--color-sage);">Selected: <span id="selected-type"></span></p>
+      </div>
+      <form class="card contact-form" method="POST" name="contact" action="/thank-you.html" data-netlify="true" data-netlify-honeypot="bot-field" onsubmit="handleFormSubmit(event)">        
+        <!-- Netlify form detection -->
+        <input type="hidden" name="form-name" value="contact" />
+        <!-- Honeypot field for spam protection -->
+        <p class="hidden">
+          <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+        </p>
+        <input type="hidden" name="contact_type" id="contact_type_input" value="">
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label>Name <span class="required">*</span></label>
+            <input type="text" name="name" required placeholder="Your full name" />
+          </div>
+          <div class="form-group">
+            <label>Email <span class="required">*</span></label>
+            <input type="email" name="email" required placeholder="your@email.com" />
+          </div>
+        </div>
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label>Company Name</label>
+            <input type="text" name="company" placeholder="Your company name" />
+          </div>
+          <div class="form-group">
+            <label>Company Website <span style="opacity:0.6;">(Optional)</span></label>
+            <input type="url" name="website" placeholder="https://yourcompany.com" />
+          </div>
+        </div>
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label>Industry</label>
+            <select name="industry">
+              <option value="">Select your industry</option>
+              <option value="ecommerce">E-commerce & Retail</option>
+              <option value="saas">SaaS & Technology</option>
+              <option value="health">Health & Wellness</option>
+              <option value="beauty">Beauty & Fashion</option>
+              <option value="food">Food & Beverage</option>
+              <option value="finance">Finance & Fintech</option>
+              <option value="education">Education</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Monthly Marketing Budget</label>
+            <select name="budget">
+              <option value="">Select budget range</option>
+              <option value="<50k">Under ₹50K</option>
+              <option value="50k-200k">₹50K - ₹2L</option>
+              <option value="200k-500k">₹2L - ₹5L</option>
+              <option value="500k-1000k">₹5L - ₹10L</option>
+              <option value=">1000k">Above ₹10L</option>
+            </select>
+          </div>
+        </div>
+        
+        <div class="form-group hidden" id="other-industry-group">
+          <label>Please specify your industry</label>
+          <input type="text" name="other_industry" placeholder="Please describe your industry" />
+        </div>
+        <div class="form-group full">
+          <label>Service Interest</label>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-top:0.5rem;">
+            <label style="display:flex;gap:.75rem;align-items:center;font-weight:500;"><input type="checkbox" name="services" value="ugc" /> UGC Content Creation</label>
+            <label style="display:flex;gap:.75rem;align-items:center;font-weight:500;"><input type="checkbox" name="services" value="production" /> Video Production</label>
+            <label style="display:flex;gap:.75rem;align-items:center;font-weight:500;"><input type="checkbox" name="services" value="strategy" /> UGC Strategy</label>
+            <label style="display:flex;gap:.75rem;align-items:center;font-weight:500;"><input type="checkbox" name="services" value="management" /> Creator Management</label>
+          </div>
+        </div>
+        
+        <div class="form-group full">
+          <label>Message <span class="required">*</span></label>
+          <textarea name="message" id="message-field" rows="5" required placeholder="Tell us about your goals, current challenges, or specific requirements..."></textarea>
+        </div>
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label>How did you hear about us?</label>
+            <select name="referrer" onchange="toggleOtherReferrer(this)">
+              <option value="">Select source</option>
+              <option value="google">Google Search</option>
+              <option value="social">Social Media</option>
+              <option value="referral">Word of Mouth</option>
+              <option value="linkedin">LinkedIn</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="form-group hidden" id="other-referrer-group">
+            <label>Please specify</label>
+            <input type="text" name="other_referrer" placeholder="How did you find us?" />
+          </div>
+        </div>
+        
+        <div class="full" style="display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;margin-top:1.5rem;">
+          <button class="btn btn-primary" type="submit" style="min-width:200px;">Send Message</button>
+          <a class="btn btn-secondary" href="https://wa.me/919239161632?text=Hi,%20I%27d%20like%20to%20discuss%20my%20requirements" target="_blank" rel="noopener">Chat on WhatsApp</a>
+        </div>
+      </form>
+      
+      <div style="background:var(--color-warm-stone);padding:2rem;border-radius:var(--radius-softer);margin-top:2rem;text-align:center;">
+        <p style="margin:0;opacity:0.8;"><i data-lucide="sparkles" style="display:inline;width:16px;height:16px;margin-right:0.5rem;"></i><strong>We respond within 4 hours on business days</strong> | <i data-lucide="phone" style="display:inline;width:16px;height:16px;margin:0 0.5rem;"></i>Need immediate help? Call us at +91 9239161632</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+      <div class="container">
+          <div class="footer-content">
+              <div class="footer-section">
+                  <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
+                      <img src="makeugclogo-01.jpg" alt="MakeUGC Logo" style="height: 35px; width: 35px; border-radius: 50%; object-fit: cover;">
+                      <h4 style="margin: 0;">MakeUGC</h4>
+                  </div>
+                  <p>MakeUGC.in<br>
+                  4G KrishtiKunja, Airport, Kolkata, India</p>
+                  <p>contact@makeugc.in<br>
+                  Mobile: +91 9239161632</p>
+              </div>
+              
+              <div class="footer-section">
+                  <h4>Quick Links</h4>
+                  <p><a href="index.html">Home</a><br>
+                  <a href="services.html">Services</a><br>
+                  <a href="creators.html">Creators</a><br>
+                  <a href="blog.html">Blog</a><br>
+                  <a href="#contact">Contact</a></p>
+              </div>
+              
+              <div class="footer-section">
+                  <h4>Resources</h4>
+                  <p><a href="#">UGC Strategy Guide</a><br>
+                  <a href="#">Creator Brief Template</a><br>
+                  <a href="#">ROI Calculator</a><br>
+                  <a href="#">Case Studies</a></p>
+              </div>
+              
+              <div class="footer-section">
+                  <h4>Trust Signals</h4>
+                  <p>Trusted by 50+ D2C Brands<br>
+                  Meta Business Partner<br>
+                  Your Data is Secure</p>
+              </div>
+          </div>
+          
+          <div class="footer-bottom">
+              <p>© 2025 MakeUGC • All rights reserved • <a href="#" style="color: inherit;">Privacy Policy</a> • <a href="#" style="color: inherit;">Terms of Service</a></p>
+          </div>
+      </div>
+  </footer>
+
+  <script>
+    // Contact type selection
+    function selectContactType(type) {
+      // Remove active class from all sections
+      document.querySelectorAll('.contact-section').forEach(section => {
+        section.classList.remove('active');
+      });
+      
+      // Add active class to selected section
+      document.getElementById(type + '-section').classList.add('active');
+      
+      // Update hidden input
+      document.getElementById('contact_type_input').value = type;
+      
+      // Show selected type
+      const typeNames = {
+        'customer': 'Customer Inquiry',
+        'partner': 'Existing Partner',
+        'client': 'Existing Client',
+        'prospect': 'Prospective Client'
+      };
+      
+      document.getElementById('selected-type').textContent = typeNames[type];
+      document.getElementById('contact-type-display').style.display = 'block';
+      
+      // Smooth scroll to form
+      document.getElementById('contact').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    
+    // Toggle other industry field
+    document.querySelector('select[name="industry"]').addEventListener('change', function() {
+      const otherGroup = document.getElementById('other-industry-group');
+      if (this.value === 'other') {
+        otherGroup.classList.remove('hidden');
+      } else {
+        otherGroup.classList.add('hidden');
+        document.querySelector('input[name="other_industry"]').value = '';
+      }
+    });
+    
+    // Toggle other referrer field
+    function toggleOtherReferrer(select) {
+      const otherGroup = document.getElementById('other-referrer-group');
+      if (select.value === 'other') {
+        otherGroup.classList.remove('hidden');
+        otherGroup.classList.add('form-group');
+      } else {
+        otherGroup.classList.add('hidden');
+        document.querySelector('input[name="other_referrer"]').value = '';
+      }
+    }
+    
+    // Auto-populate form based on URL parameters
+    document.addEventListener('DOMContentLoaded', function() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const service = urlParams.get('service');
+      const type = urlParams.get('type');
+      
+      if (service && type) {
+        // Update contact type based on service
+        const serviceMessages = {
+          'ugc': 'UGC Content Creation Quote Request',
+          'production': 'Video Production Consultation Request', 
+          'digital': 'Digital Build Portfolio Request',
+          'growth': 'Growth & Ads Beta Access Request',
+          'quote': 'General Quote Request',
+          'custom': 'Custom Quote Request'
+        };
+        
+        const selectedType = serviceMessages[service] || 'Service Inquiry';
+        document.getElementById('selected-type').textContent = selectedType;
+        document.getElementById('contact-type-display').style.display = 'block';
+        document.getElementById('contact_type_input').value = service + '_' + type;
+        
+        // Pre-populate message field based on service
+        const messageField = document.getElementById('message-field');
+        const serviceDescriptions = {
+          'ugc': 'Hi, I\'m interested in getting a custom quote for UGC content creation. Please provide pricing and package details.',
+          'production': 'Hi, I\'d like to book a consultation call for video and photo production services. Please share available slots.',
+          'digital': 'Hi, I\'d like to see portfolio samples for your e-commerce and digital build services. Please share relevant case studies.',
+          'growth': 'Hi, I\'d like to apply for beta access to your Growth & Ads service. Please share more details about the program.',
+          'quote': 'Hi, I\'d like to get an instant quote for your services. Please provide pricing information.',
+          'custom': 'Hi, I\'m interested in a custom quote tailored to my specific needs. Please contact me to discuss requirements.'
+        };
+        
+        if (serviceDescriptions[service]) {
+          messageField.value = serviceDescriptions[service];
+        }
+        
+        // Auto-check relevant service interests
+        const serviceCheckboxes = {
+          'ugc': 'ugc',
+          'production': 'production', 
+          'digital': 'strategy',
+          'growth': 'management'
+        };
+        
+        if (serviceCheckboxes[service]) {
+          const checkbox = document.querySelector(`input[name="services"][value="${serviceCheckboxes[service]}"]`);
+          if (checkbox) checkbox.checked = true;
+        }
+      }
+    });
+    
+    // Form submission (will now actually submit to Netlify)
+    function handleFormSubmit(event) {
+      // Don't prevent default - let Netlify handle the submission
+      // event.preventDefault();
+      
+      // Show loading state
+      const submitBtn = event.target.querySelector('button[type="submit"]');
+      const originalText = submitBtn.innerHTML;
+      submitBtn.innerHTML = 'Sending...';
+      submitBtn.disabled = true;
+      
+      // Reset button state after a timeout in case redirect doesn't happen
+      setTimeout(() => {
+        submitBtn.innerHTML = originalText;
+        submitBtn.disabled = false;
+      }, 10000); // 10 seconds timeout
+      
+      // Let the form submit naturally to Netlify
+      // Netlify will redirect to thank-you.html after successful submission
+      return true;
+    }
+    
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+    
+    // Initialize Lucide icons with retry mechanism
+    function initializeLucideIcons() {
+      if (typeof lucide !== 'undefined' && lucide.createIcons) {
+        lucide.createIcons();
+        console.log('Lucide icons initialized successfully');
+      } else {
+        console.warn('Lucide not loaded, retrying...');
+        setTimeout(initializeLucideIcons, 100);
+      }
+    }
+
+    // Initialize icons when DOM is ready
+    document.addEventListener('DOMContentLoaded', function() {
+      initializeLucideIcons();
+    });
+
+    // Also initialize after page load as backup
+    window.addEventListener('load', function() {
+      setTimeout(initializeLucideIcons, 200);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MakeUGC Blog - Insights & Strategies for Creator Marketing</title>
+    <meta name="description" content="Expert insights on user-generated content strategy, creator economy trends, and UGC marketing tactics. Learn from our data-driven case studies and industry analysis.">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="MakeUGC Blog - Expert Creator Marketing Insights">
+    <meta property="og:description" content="Discover proven UGC strategies, case studies, and industry trends from the leading user-generated content agency.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://makeugc.in/blog">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Core Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/splitting@1.0.6/dist/splitting.css">
+    <!-- Lucide Icons with fallback -->
+    <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.js"></script>
+    <script>
+        // Fallback loading for Lucide
+        if (typeof lucide === 'undefined') {
+            const fallbackScript = document.createElement('script');
+            fallbackScript.src = 'https://unpkg.com/lucide@latest/dist/umd/lucide.js';
+            document.head.appendChild(fallbackScript);
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.4.3/echarts.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js"></script>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        sage: '#9CAF88',
+                        'warm-stone': '#E6DDD4',
+                        charcoal: '#3A3A3A',
+                        'soft-clay': '#D4C4B0',
+                        moss: '#7A8471',
+                        cream: '#F5F1EB',
+                        rust: '#B85450',
+                        'dust-blue': '#8B9DC3'
+                    },
+                    fontFamily: {
+                        'crimson': ['Crimson Text', 'serif'],
+                        'inter': ['Inter', 'sans-serif'],
+                        'playfair': ['Playfair Display', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        .hero-bg {
+            background: linear-gradient(135deg, rgba(156, 175, 136, 0.1) 0%, rgba(230, 221, 212, 0.3) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .organic-shape {
+            position: absolute;
+            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .organic-shape:nth-child(2) {
+            animation-delay: -2s;
+            animation-duration: 8s;
+        }
+        
+        .organic-shape:nth-child(3) {
+            animation-delay: -4s;
+            animation-duration: 10s;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+        
+        .blog-card {
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            background: rgba(245, 241, 235, 0.8);
+            backdrop-filter: blur(10px);
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(156, 175, 136, 0.15);
+        }
+        
+        .category-tag {
+            transition: all 0.3s ease;
+            background: rgba(156, 175, 136, 0.1);
+            border: 1px solid rgba(156, 175, 136, 0.3);
+        }
+        
+        .category-tag:hover {
+            background: rgba(156, 175, 136, 0.2);
+            transform: scale(1.05);
+        }
+        
+        .category-tag.active {
+            background: rgba(156, 175, 136, 0.3);
+            border-color: rgba(156, 175, 136, 0.6);
+        }
+        
+        .search-container {
+            position: relative;
+        }
+        
+        .search-suggestions {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            z-index: 50;
+            max-height: 300px;
+            overflow-y: auto;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            pointer-events: none;
+        }
+        
+        .search-suggestions.show {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: all;
+        }
+        
+        .reading-progress {
+            height: 4px;
+            background: rgba(156, 175, 136, 0.2);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+        
+        .reading-progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #9CAF88, #7A8471);
+            border-radius: 2px;
+            transition: width 0.3s ease;
+        }
+        
+        .trending-item {
+            transition: all 0.3s ease;
+        }
+        
+        .trending-item:hover {
+            background: rgba(156, 175, 136, 0.05);
+            padding-left: 8px;
+        }
+        
+        .newsletter-form {
+            background: linear-gradient(135deg, rgba(156, 175, 136, 0.1) 0%, rgba(212, 196, 176, 0.1) 100%);
+            border-radius: 20px;
+            border: 1px solid rgba(156, 175, 136, 0.2);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #9CAF88, #7A8471);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(156, 175, 136, 0.3);
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .masonry-grid {
+            column-count: 3;
+            column-gap: 2rem;
+            column-fill: balance;
+        }
+        
+        @media (max-width: 1024px) {
+            .masonry-grid {
+                column-count: 2;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .masonry-grid {
+                column-count: 1;
+            }
+        }
+        
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 2rem;
+        }
+        
+        /* Navigation Styles */
+        .main-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(245, 241, 235, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(139, 154, 122, 0.15);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-family: 'Crimson Text', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #3A3A3A;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links li a {
+            text-decoration: none;
+            color: #3A3A3A;
+            font-weight: 500;
+            position: relative;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            padding: 0.5rem 0;
+        }
+
+        .nav-links li a:hover {
+            color: #9CAF88;
+        }
+
+        .nav-links li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #9CAF88;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .nav-links li a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: #3A3A3A;
+            padding: 0.5rem;
+            min-height: 44px;
+            min-width: 44px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-nav-toggle:hover {
+            background: rgba(139, 154, 122, 0.1);
+        }
+
+        /* Container styles */
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Footer Styles */
+        .footer {
+            background: #3A3A3A;
+            color: #F5F1EB;
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            font-family: 'Crimson Text', serif;
+            font-size: 1.125rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #F5F1EB;
+        }
+
+        .footer-section p {
+            line-height: 1.6;
+            color: rgba(245, 241, 235, 0.8);
+        }
+
+        .footer-section a {
+            color: rgba(245, 241, 235, 0.8);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: #9CAF88;
+        }
+
+        .footer-bottom {
+            padding-top: 2rem;
+            border-top: 1px solid rgba(245, 241, 235, 0.2);
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            color: rgba(245, 241, 235, 0.6);
+            font-size: 0.875rem;
+        }
+
+        .footer-bottom a {
+            color: rgba(245, 241, 235, 0.6);
+            text-decoration: none;
+        }
+
+        .footer-bottom a:hover {
+            color: #9CAF88;
+        }
+
+        /* Mobile Navigation */
+        .nav-links.mobile-open {
+            display: flex;
+            position: fixed;
+            top: 80px;
+            left: 0;
+            right: 0;
+            background: rgba(245, 241, 235, 0.98);
+            backdrop-filter: blur(20px);
+            flex-direction: column;
+            padding: 2rem;
+            gap: 1.5rem;
+            z-index: 999;
+            border-bottom: 1px solid rgba(139, 154, 122, 0.15);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-nav-toggle {
+                display: block;
+                min-height: 44px;
+                min-width: 44px;
+                padding: 0.5rem;
+            }
+
+            .btn-primary {
+                min-height: 44px;
+                padding: 0.875rem 1.75rem;
+            }
+        }
+
+        /* Newsletter CTA Styles */
+        .newsletter-cta {
+            background: linear-gradient(135deg, #9CAF88 0%, #7A8471 100%);
+            padding: 4rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .newsletter-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,<svg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'><g fill='none' fill-rule='evenodd'><g fill='%23ffffff' fill-opacity='0.05'><path d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/></g></g></svg>") repeat;
+            animation: float 20s linear infinite;
+        }
+
+        .newsletter-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .newsletter-cta h2 {
+            color: white;
+            font-size: clamp(2rem, 4vw, 2.5rem);
+            margin-bottom: 1rem;
+        }
+
+        .newsletter-cta p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.125rem;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .newsletter-form-cta {
+            display: flex;
+            gap: 1rem;
+            max-width: 400px;
+            margin: 0 auto 1.5rem;
+        }
+
+        .newsletter-form-cta input {
+            flex: 1;
+            padding: 1rem 1.5rem;
+            border: none;
+            border-radius: 12px;
+            font-size: 1rem;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            color: #3A3A3A;
+        }
+
+        .newsletter-form-cta input::placeholder {
+            color: rgba(58, 58, 58, 0.6);
+        }
+
+        .newsletter-form-cta button {
+            padding: 1rem 2rem;
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 12px;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .newsletter-form-cta button:hover {
+            background: rgba(255, 255, 255, 0.3);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: translateY(-2px);
+        }
+
+        .newsletter-disclaimer {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.875rem;
+        }
+
+        @media (max-width: 768px) {
+            .newsletter-form-cta {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body class="bg-cream text-charcoal font-inter">
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="index.html" class="logo" style="display: flex; align-items: center; gap: 0.75rem;">
+                <img src="makeugclogo-01.jpg" alt="MakeUGC Logo" style="height: 50px; width: 50px; border-radius: 50%; object-fit: cover;">
+                <span>MakeUGC</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="creators.html">Creators</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="contact.html" class="btn btn-primary">Contact</a></li>
+            </ul>
+            <button class="mobile-nav-toggle"><i data-lucide="menu"></i></button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-bg pt-24 pb-16 relative">
+        <div class="organic-shape w-32 h-32 bg-sage/20 top-20 left-10"></div>
+        <div class="organic-shape w-24 h-24 bg-soft-clay/30 top-40 right-20"></div>
+        <div class="organic-shape w-40 h-40 bg-dust-blue/20 bottom-20 left-1/4"></div>
+        
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="text-center mb-12">
+                <h1 class="font-crimson text-5xl md:text-7xl font-bold text-charcoal mb-6 leading-tight">
+                    <span class="typed-text"></span>
+                </h1>
+                <p class="text-xl md:text-2xl text-charcoal/80 max-w-3xl mx-auto leading-relaxed">
+                    Expert insights, data-driven strategies, and proven tactics from the forefront of user-generated content marketing
+                </p>
+            </div>
+            
+            <!-- Stats Bar -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-sage mb-2" data-count="500">0</div>
+                    <div class="text-sm text-charcoal/70">Campaigns Analyzed</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-sage mb-2" data-count="89">0</div>
+                    <div class="text-sm text-charcoal/70">Avg Engagement Lift</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-sage mb-2" data-count="340">0</div>
+                    <div class="text-sm text-charcoal/70">Max ROAS Achieved</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-sage mb-2" data-count="120">0</div>
+                    <div class="text-sm text-charcoal/70">Creator Network</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search and Filter Section -->
+    <section class="py-12 bg-warm-stone/30">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col lg:flex-row gap-8 items-center justify-between">
+                <!-- Search -->
+                <div class="search-container flex-1 max-w-md">
+                    <div class="relative">
+                        <input 
+                            type="text" 
+                            id="searchInput"
+                            placeholder="Search articles, topics, insights..."
+                            class="w-full px-6 py-4 bg-white rounded-full border border-sage/30 focus:border-sage focus:outline-none focus:ring-2 focus:ring-sage/20"
+                        >
+                        <button class="absolute right-4 top-1/2 transform -translate-y-1/2 text-sage">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="search-suggestions" id="searchSuggestions">
+                        <!-- Dynamic suggestions will be populated here -->
+                    </div>
+                </div>
+                
+                <!-- Category Filters -->
+                <div class="flex flex-wrap gap-3">
+                    <button class="category-tag active px-4 py-2 rounded-full text-sm font-medium" data-category="all">
+                        All Posts
+                    </button>
+                    <button class="category-tag px-4 py-2 rounded-full text-sm font-medium" data-category="ugc-strategy">
+                        UGC Strategy
+                    </button>
+                    <button class="category-tag px-4 py-2 rounded-full text-sm font-medium" data-category="case-studies">
+                        Case Studies
+                    </button>
+                    <button class="category-tag px-4 py-2 rounded-full text-sm font-medium" data-category="platform-updates">
+                        Platform Updates
+                    </button>
+                    <button class="category-tag px-4 py-2 rounded-full text-sm font-medium" data-category="marketing-tactics">
+                        Marketing Tactics
+                    </button>
+                    <button class="category-tag px-4 py-2 rounded-full text-sm font-medium" data-category="analytics">
+                        Analytics
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="py-16">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-4 gap-12">
+                <!-- Blog Posts Grid -->
+                <div class="lg:col-span-3">
+                    <div class="masonry-grid" id="blogGrid">
+                        <!-- Blog posts will be populated by JavaScript -->
+                    </div>
+                    
+                    <!-- Load More Button -->
+                    <div class="text-center mt-12">
+                        <button id="loadMoreBtn" class="btn-primary text-white px-8 py-3 rounded-full font-medium">
+                            Load More Articles
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Sidebar -->
+                <div class="lg:col-span-1">
+                    <!-- Newsletter Signup -->
+                    <div class="newsletter-form p-6 mb-8">
+                        <h3 class="font-crimson text-xl font-bold mb-4">Stay Updated</h3>
+                        <p class="text-sm text-charcoal/70 mb-4">Get the latest UGC insights delivered to your inbox</p>
+                        <form class="space-y-4">
+                            <input 
+                                type="email" 
+                                placeholder="Enter your email"
+                                class="w-full px-4 py-3 bg-white rounded-lg border border-sage/30 focus:border-sage focus:outline-none"
+                                required
+                            >
+                            <button type="submit" class="btn-primary w-full text-white py-3 rounded-lg font-medium">
+                                Subscribe
+                            </button>
+                        </form>
+                        <p class="text-xs text-charcoal/50 mt-3">No spam, unsubscribe anytime</p>
+                    </div>
+                    
+                    <!-- Trending Posts -->
+                    <div class="bg-white rounded-2xl p-6 border border-sage/20">
+                        <h3 class="font-crimson text-xl font-bold mb-6">Trending Now</h3>
+                        <div class="space-y-4" id="trendingPosts">
+                            <!-- Trending posts will be populated by JavaScript -->
+                        </div>
+                    </div>
+                    
+                    <!-- Analytics Dashboard -->
+                    <div class="bg-white rounded-2xl p-6 border border-sage/20 mt-8">
+                        <h3 class="font-crimson text-xl font-bold mb-4">Live Metrics</h3>
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-charcoal/70">Total Views</span>
+                                <span class="font-bold text-sage" id="totalViews">0</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-charcoal/70">Engagement Rate</span>
+                                <span class="font-bold text-sage" id="engagementRate">0%</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-charcoal/70">Active Readers</span>
+                                <span class="font-bold text-sage" id="activeReaders">0</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Mini Chart -->
+                        <div class="mt-6">
+                            <div id="miniChart" style="height: 120px;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter CTA -->
+    <section class="newsletter-cta">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Never Miss a UGC Insight</h2>
+                <p>Get our latest strategies and case studies delivered to your inbox weekly</p>
+                
+                <form class="newsletter-form-cta" onsubmit="handleNewsletterSignup(event)">
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+                
+                <p class="newsletter-disclaimer">
+                    Join 15,000+ marketers getting UGC insights weekly. No spam, unsubscribe anytime.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
+                        <img src="makeugclogo-01.jpg" alt="MakeUGC Logo" style="height: 35px; width: 35px; border-radius: 50%; object-fit: cover;">
+                        <h4 style="margin: 0;">MakeUGC</h4>
+                    </div>
+                    <p>MakeUGC.in<br>
+                    4G KrishtiKunja, Airport, Kolkata, India</p>
+                    <p>contact@makeugc.in<br>
+                    Mobile: +91 9239161632</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <p><a href="index.html">Home</a><br>
+                    <a href="services.html">Services</a><br>
+                    <a href="creators.html">Creators</a><br>
+                    <a href="blog.html">Blog</a><br>
+                    <a href="contact.html">Contact</a></p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <p><a href="resources.html">Free Templates</a><br>
+                    <a href="creator-brief-template.html">Creator Brief Template</a><br>
+                    <a href="roi-calculator.html">ROI Calculator</a><br>
+                    <a href="blog.html">Case Studies</a></p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Trust & Legal</h4>
+                    <p>Trusted by 50+ D2C Brands<br>
+                    Meta Business Partner<br>
+                    <a href="security.html">🛡️ Your Data is Secure</a></p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2025 MakeUGC • All rights reserved • <a href="privacy-policy.html">Privacy Policy</a> • <a href="terms-conditions.html">Terms of Service</a> • <a href="refund-policy.html">Refund Policy</a> • <a href="security.html">Security</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    
+    <script>
+        // Newsletter signup function
+        function handleNewsletterSignup(event) {
+            event.preventDefault();
+            const email = event.target.querySelector('input[type="email"]').value;
+            
+            // Here you would normally send to your backend
+            alert('✓ Thank you for subscribing! Check your email for the latest UGC insights.');
+            event.target.reset();
+        }
+
+        // Initialize Lucide icons with retry mechanism
+        function initializeLucideIcons() {
+            if (typeof lucide !== 'undefined' && lucide.createIcons) {
+                lucide.createIcons();
+                console.log('Lucide icons initialized successfully');
+            } else {
+                console.warn('Lucide not loaded, retrying...');
+                setTimeout(initializeLucideIcons, 100);
+            }
+        }
+
+        // Initialize on DOM ready
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeLucideIcons();
+        });
+
+        // Mobile Navigation Toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileToggle = document.querySelector('.mobile-nav-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            
+            if (mobileToggle && navLinks) {
+                mobileToggle.addEventListener('click', function() {
+                    navLinks.classList.toggle('mobile-open');
+                    this.innerHTML = navLinks.classList.contains('mobile-open') ? '<i data-lucide="x"></i>' : '<i data-lucide="menu"></i>';
+                    if (typeof lucide !== 'undefined') lucide.createIcons();
+                });
+                
+                // Close mobile menu when clicking on links
+                navLinks.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        navLinks.classList.remove('mobile-open');
+                        mobileToggle.innerHTML = '<i data-lucide="menu"></i>';
+                        if (typeof lucide !== 'undefined') lucide.createIcons();
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>
